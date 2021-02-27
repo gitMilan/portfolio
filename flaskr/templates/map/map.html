@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Leaflet example</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script type=text/javascript>
+	  $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+  </script>
+
+
+  <!-- include leaflet css and javascript -->
+  <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
+  <!-- include our own css -->
+
+  <link rel="stylesheet" href="../../static/leaflet.css" />
+
+  <link href="https://unpkg.com/leaflet-geosearch@latest/assets/css/leaflet.css" rel="stylesheet" />
+  <script src="https://unpkg.com/leaflet-geosearch@latest/dist/bundle.min.js"></script>
+
+
+</head>
+
+<body>
+
+
+  <div id="map"></div>
+
+  <script type=text/javascript src="{{url_for('static', filename='leafletMethods.js')}}"></script>
+
+
+
+</body>
+
+</html>
