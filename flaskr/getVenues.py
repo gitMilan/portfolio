@@ -32,11 +32,15 @@ def getVenuesByLatLng(lat, lng):
 
 def get_venues_events(venue_id):
 
-  venues_events_request = f"ttps://api.songkick.com/api/3.0/venues/{venue_id}/calendar.json?apikey={api_key}"
-  r = requests.get(venues_events)
+  #https://api.songkick.com/api/3.0/venues/{venue_id}/calendar.json?apikey={your_api_key}
+
+  venues_events_request = f"https://api.songkick.com/api/3.0/venues/{venue_id}/calendar.json?apikey={api_key}"
+  r = requests.get(venues_events_request)
   r = r.json()
 
   events = r['resultsPage']['results']['event']
+
+  print(events)
 
   # venues_events = {}
 

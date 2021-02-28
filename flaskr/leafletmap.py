@@ -12,14 +12,6 @@ bp = Blueprint('map', __name__)
 @bp.route('/map')
 def show_map():
 
-  lat = 53.219383
-  lng = 6.566502
-
-  # events = getVenues.getEventsByLatLng(lat, lng)
-
-  # data = {"Name": "Potato", "Type": "Vegetable"}, {"Name": "Cherry", "Type": "Fruit"}
-
-  # return render_template('map/map.html', data=events)
   return render_template('map/map.html')
 
 
@@ -40,14 +32,21 @@ def get_venues():
 
 @bp.route('/_get_venues_events', methods=['POST', 'GET'])
 def get_venues_events():
+
+
+    #https://api.songkick.com/api/3.0/venues/{venue_id}/calendar.json?apikey={your_api_key}
+
+
+
     if request.method == 'POST':
         data = json.loads(request.data)
-        
 
-    events = getVenues.getVenuesByLatLng(lat, lng)
+    events = getVenues.get_venues_events(data)
+
+    
 
     return jsonify(events)
-
+        
 
 
 

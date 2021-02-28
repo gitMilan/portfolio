@@ -3,12 +3,21 @@ html {
   height: 100%;
   font-family:Arial;
 }
+
   
 #map {
   width: 80%;
   height: 100%;
   z-index:100;
 }
+
+#event-table {
+  position: right;
+}
+
+#map, #event-table {float:left; display:inline; width: 49%;}
+
+
 
 #mapSearchContainer{
   position:fixed;
