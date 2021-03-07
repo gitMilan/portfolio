@@ -44,12 +44,13 @@ def create_app(test_config=None):
     from . import test
     app.register_blueprint(test.bp)
 
+    from . import midi_game
+    app.register_blueprint(midi_game.bp)
+
     
     from . import leafletmap
     app.register_blueprint(leafletmap.bp)
 
-    from . import test
-    app.register_blueprint(test.bp)
 
     from . import db
     db.init_app(app)
